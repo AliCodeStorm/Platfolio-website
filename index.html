@@ -54,17 +54,6 @@
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
 
-    <!-- Theme Toggle -->
-    <div class="theme-toggle" aria-label="Theme switcher">
-        <input type="checkbox" id="theme-switch" class="theme-switch" aria-label="Switch between dark and light mode">
-        <label for="theme-switch" class="switch-label" title="Toggle dark/light mode">
-            <i class="fas fa-sun" aria-hidden="true"></i>
-            <i class="fas fa-moon" aria-hidden="true"></i>
-            <span class="switch-ball"></span>
-            <span class="sr-only">Toggle dark/light mode</span>
-        </label>
-    </div>
-
     <!-- Navigation Overlay -->
     <div class="nav-overlay"></div>
 
@@ -72,7 +61,7 @@
     <header class="header">
         <div class="container">
             <div class="logo">
-                <a href="#home">Platfolio</a>
+                <a href="#home">CodeVertex</a>
             </div>
             <nav class="navbar" aria-label="Main navigation">
                 <ul class="nav-links">
@@ -82,6 +71,15 @@
                     <li><a href="#projects" class="nav-link">Projects</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
+                <div class="theme-toggle">
+                    <input type="checkbox" id="theme-switch" class="theme-switch">
+                    <label for="theme-switch" class="switch-label" aria-label="Toggle dark/light mode">
+                        <i class="fas fa-sun" aria-hidden="true"></i>
+                        <i class="fas fa-moon" aria-hidden="true"></i>
+                        <span class="switch-ball"></span>
+                        <span class="sr-only">Toggle dark mode</span>
+                    </label>
+                </div>
                 <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -119,8 +117,7 @@
             </div>
             <div class="hero-image" data-aos="zoom-in" data-aos-delay="200">
                 <div class="image-placeholder">
-                    <img src="assets/images/hero-image.png" alt="Profile Image"
-                        onerror="this.style.display='none'; this.parentNode.classList.add('no-image');">
+                    <img src="assets/images/hero-image.png" alt="Profile Image" onerror="this.style.display='none'; this.parentNode.classList.add('no-image');">
                 </div>
                 <div class="shape shape-1"></div>
                 <div class="shape shape-2"></div>
@@ -148,8 +145,7 @@
             <div class="about-content">
                 <div class="about-image" data-aos="fade-right">
                     <div class="image-placeholder">
-                        <img src="assets/images/about-image.jpg" alt="About Me"
-                            onerror="this.style.display='none'; this.parentNode.classList.add('no-image');">
+                        <img src="./assets/images/about-image.jpg" alt="About Me" onerror="this.style.display='none'; this.parentNode.classList.add('no-image');">
                     </div>
                     <div class="experience-badge">
                         <span class="years">MERN</span>
@@ -157,14 +153,26 @@
                     </div>
                 </div>
                 <div class="about-text" data-aos="fade-left">
-                    <h3>👋 Hi, I'm AliRaza, a Passionate MERN Stack Developer</h3>
-                    <p>I'm a passionate MERN Stack Developer and tech enthusiast. I love building dynamic, user-friendly
-                        web applications and constantly learning new technologies to enhance my skills.</p>
-                    <p>Currently, I'm working on FashionNest, a full-featured clothing e-commerce store, where I'm
-                        honing my skills in MongoDB, Express.js, React.js, and Node.js. I also enjoy exploring
-                        animations to create engaging and interactive web experiences.</p>
-                    <p>Beyond coding, I'm interested in AI-based video editing and content creation, aiming to share my
-                        knowledge on YouTube with programming tutorials and creative AI-generated content.</p>
+                    <h3>👋 Hi, I'm AliRaza, a Passionate MEARN Stack Developer</h3>
+                    <p>I'm a dedicated <strong>MEARN Stack Developer</strong> and tech enthusiast. I specialize in
+                        building
+                        <strong>dynamic, user-friendly, and interactive web applications</strong>, constantly learning
+                        new technologies to push my skills further.
+                    </p>
+
+                    <p>Currently, I'm working on <strong>FashionNest Store</strong>, a full-featured clothing e-commerce
+                        platform, where I'm refining my expertise in
+                        <strong>MongoDB, Express.js, React.js, Node.js, and Next.js</strong>. I have a deep passion for
+                        creating
+                        <strong>interactive and engaging web experiences</strong> using animations and modern UI
+                        techniques.
+                    </p>
+
+                    <p>Beyond coding, I'm passionate about <strong>AI-based video editing and content creation</strong>,
+                        aiming to share my knowledge
+                        through <strong>YouTube tutorials</strong> and <strong>AI-powered programming content</strong>.
+                    </p>
+
                     <div class="about-info">
                         <div class="info-item">
                             <span class="info-title">Focus:</span>
@@ -354,7 +362,7 @@
                     <div class="project-card-inner">
                         <div class="project-card-front">
                             <div class="project-image-placeholder">
-                                <img src="assets/images/projects/project-1.jpg" alt="FashionNest E-commerce"
+                                <img src="assets/images/projects/project-1.png" alt="FashionNest E-commerce"
                                     onerror="this.style.display='none'; this.parentNode.classList.add('no-image');">
                             </div>
                             <div class="project-overlay">

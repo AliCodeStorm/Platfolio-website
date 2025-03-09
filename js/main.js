@@ -3,22 +3,173 @@
 document.addEventListener('DOMContentLoaded', function() {
   'use strict';
 
-  // Initialize AOS (Animate on Scroll)
-  AOS.init({
-    duration: 800,
-    easing: 'ease-in-out',
-    once: false,
-    mirror: false,
-    disable: 'mobile', // Disable on mobile for better performance
-    startEvent: 'DOMContentLoaded'
+  // Disable AOS animations to ensure content is visible
+  if (typeof AOS !== 'undefined') {
+    AOS.init({
+      disable: true // Disable all animations
+    });
+  }
+
+  // Force all elements with AOS attributes to be visible
+  document.querySelectorAll('[data-aos]').forEach(element => {
+    element.removeAttribute('data-aos');
+    element.removeAttribute('data-aos-delay');
+    element.style.opacity = '1';
+    element.style.visibility = 'visible';
+    element.style.transform = 'none';
   });
 
-  // Make sure all content is visible regardless of AOS
-  setTimeout(function() {
-    document.querySelectorAll('[data-aos]').forEach(element => {
-      element.classList.add('aos-animate');
+  // Force display of hero content
+  const heroContent = document.querySelector('.hero-content');
+  if (heroContent) {
+    heroContent.style.opacity = '1';
+    heroContent.style.visibility = 'visible';
+  }
+
+  // Force display of social links
+  const socialLinks = document.querySelector('.social-links');
+  if (socialLinks) {
+    socialLinks.style.opacity = '1';
+    socialLinks.style.visibility = 'visible';
+  }
+
+  // Force display of hero CTA buttons
+  const heroCta = document.querySelector('.hero-cta');
+  if (heroCta) {
+    heroCta.style.opacity = '1';
+    heroCta.style.visibility = 'visible';
+  }
+
+  // Force display of hero description
+  const heroDescription = document.querySelector('.hero-description');
+  if (heroDescription) {
+    heroDescription.style.opacity = '1';
+    heroDescription.style.visibility = 'visible';
+  }
+
+  // Ensure all images are properly loaded
+  const allImages = document.querySelectorAll('img');
+  allImages.forEach(img => {
+    img.addEventListener('error', function() {
+      this.style.display = 'none';
+      if (this.parentNode.classList.contains('image-placeholder')) {
+        this.parentNode.classList.add('no-image');
+      }
+      if (this.parentNode.classList.contains('project-image-placeholder')) {
+        this.parentNode.classList.add('no-image');
+      }
     });
-  }, 500);
+  });
+
+  // Initialize project cards
+  const projectCards = document.querySelectorAll('.project-card');
+  projectCards.forEach(card => {
+    card.style.display = 'block';
+    card.style.opacity = '1';
+    card.style.transform = 'scale(1)';
+  });
+
+  // Make testimonials visible immediately
+  const testimonialItems = document.querySelectorAll('.testimonial-item');
+  testimonialItems.forEach((item, index) => {
+    item.style.opacity = '1';
+    item.style.visibility = 'visible';
+    item.style.display = 'block';
+    
+    // Show the first testimonial by default
+    if (index === 0) {
+      item.classList.add('active');
+    } else {
+      item.classList.remove('active');
+    }
+  });
+
+  // Initialize testimonial controls
+  const testimonialPrev = document.querySelector('.testimonial-prev');
+  const testimonialNext = document.querySelector('.testimonial-next');
+  
+  if (testimonialPrev && testimonialNext && testimonialItems.length > 0) {
+    let currentTestimonial = 0;
+    
+    // Show testimonial function
+    function showTestimonial(index) {
+      testimonialItems.forEach((item, i) => {
+        if (i === index) {
+          item.style.opacity = '1';
+          item.style.display = 'block';
+          item.classList.add('active');
+        } else {
+          item.style.opacity = '0';
+          item.style.display = 'none';
+          item.classList.remove('active');
+        }
+      });
+    }
+    
+    // Initialize with first testimonial visible
+    showTestimonial(0);
+    
+    // Previous button click
+    testimonialPrev.addEventListener('click', () => {
+      currentTestimonial = (currentTestimonial - 1 + testimonialItems.length) % testimonialItems.length;
+      showTestimonial(currentTestimonial);
+    });
+    
+    // Next button click
+    testimonialNext.addEventListener('click', () => {
+      currentTestimonial = (currentTestimonial + 1) % testimonialItems.length;
+      showTestimonial(currentTestimonial);
+    });
+  }
+
+  // Set light mode as default if no preference is stored
+  if (!localStorage.getItem('theme')) {
+    localStorage.setItem('theme', 'light');
+    document.body.classList.remove('dark-mode');
+    document.documentElement.setAttribute('data-theme', 'light');
+  } else {
+    // Apply saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark-mode');
+      document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+      document.body.classList.remove('dark-mode');
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  }
+
+  // Theme toggle functionality
+  const themeSwitch = document.getElementById('theme-switch');
+  if (themeSwitch) {
+    // Set initial state based on saved preference
+    themeSwitch.checked = localStorage.getItem('theme') === 'dark';
+    
+    // Add event listener for theme toggle
+    themeSwitch.addEventListener('change', function() {
+      if (this.checked) {
+        applyDarkMode();
+      } else {
+        applyLightMode();
+      }
+    });
+  }
+
+  // Function to apply dark mode
+  function applyDarkMode() {
+    document.body.classList.add('dark-mode');
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+    if (themeSwitch) themeSwitch.checked = true;
+  }
+
+  // Function to apply light mode
+  function applyLightMode() {
+    document.body.classList.remove('dark-mode');
+    document.documentElement.setAttribute('data-theme', 'light');
+    localStorage.setItem('theme', 'light');
+    if (themeSwitch) themeSwitch.checked = false;
+  }
 
   // Preloader
   const preloader = document.querySelector('#preloader');
@@ -189,14 +340,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Project filtering with animation
   const filterButtons = document.querySelectorAll('.filter-btn');
-  const projectCards = document.querySelectorAll('.project-card');
-  
-  // Initialize projects - make sure all are visible initially
-  projectCards.forEach(card => {
-    card.style.display = 'block';
-    card.style.opacity = '1';
-    card.style.transform = 'scale(1)';
-  });
   
   filterButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -230,129 +373,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Testimonial slider with improved functionality
-  let currentTestimonial = 0;
-  const testimonialItems = document.querySelectorAll('.testimonial-item');
-  const testimonialPrev = document.querySelector('.testimonial-prev');
-  const testimonialNext = document.querySelector('.testimonial-next');
-  
-  function showTestimonial(index) {
-    // Hide all testimonials with fade out
-    testimonialItems.forEach((item) => {
-      item.style.opacity = '0';
-      item.style.transform = 'scale(0.9)';
-      setTimeout(() => {
-        item.style.display = 'none';
-      }, 300);
-    });
-    
-    // Show the current testimonial with fade in
-    setTimeout(() => {
-      testimonialItems[index].style.display = 'block';
-      setTimeout(() => {
-        testimonialItems[index].style.opacity = '1';
-        testimonialItems[index].style.transform = 'scale(1)';
-      }, 50);
-    }, 300);
-  }
-  
-  if (testimonialItems.length > 0) {
-    // Add transition to all testimonial items
-    testimonialItems.forEach(item => {
-      item.style.transition = 'all 0.3s ease';
-      item.style.opacity = '0';
-      item.style.display = 'none';
-    });
-    
-    // Show the first testimonial
-    showTestimonial(currentTestimonial);
-    
-    // Next button click
-    testimonialNext.addEventListener('click', () => {
-      currentTestimonial = (currentTestimonial + 1) % testimonialItems.length;
-      showTestimonial(currentTestimonial);
-    });
-    
-    // Previous button click
-    testimonialPrev.addEventListener('click', () => {
-      currentTestimonial = (currentTestimonial - 1 + testimonialItems.length) % testimonialItems.length;
-      showTestimonial(currentTestimonial);
-    });
-    
-    // Auto-rotate testimonials
-    let testimonialInterval = setInterval(() => {
-      currentTestimonial = (currentTestimonial + 1) % testimonialItems.length;
-      showTestimonial(currentTestimonial);
-    }, 5000);
-    
-    // Pause auto-rotation on hover
-    const testimonialSlider = document.querySelector('.testimonials-slider');
-    testimonialSlider.addEventListener('mouseenter', () => {
-      clearInterval(testimonialInterval);
-    });
-    
-    testimonialSlider.addEventListener('mouseleave', () => {
-      testimonialInterval = setInterval(() => {
-        currentTestimonial = (currentTestimonial + 1) % testimonialItems.length;
-        showTestimonial(currentTestimonial);
-      }, 5000);
-    });
-  }
-
-  // Dark/Light mode toggle
-  const themeSwitch = document.querySelector('#theme-switch');
-  
-  // Check for saved theme preference or use preferred color scheme
-  const savedTheme = localStorage.getItem('theme');
-  const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-  
-  // Function to apply dark mode
-  function applyDarkMode() {
-    body.classList.add('dark-mode');
-    themeSwitch.checked = true;
-    localStorage.setItem('theme', 'dark');
-    document.documentElement.setAttribute('data-theme', 'dark');
-  }
-  
-  // Function to apply light mode
-  function applyLightMode() {
-    body.classList.remove('dark-mode');
-    themeSwitch.checked = false;
-    localStorage.setItem('theme', 'light');
-    document.documentElement.setAttribute('data-theme', 'light');
-  }
-  
-  // Apply theme based on saved preference or system preference
-  if (savedTheme === 'dark') {
-    applyDarkMode();
-  } else if (savedTheme === 'light') {
-    applyLightMode();
-  } else if (prefersDarkScheme.matches) {
-    applyDarkMode();
-  } else {
-    applyLightMode();
-  }
-  
-  // Toggle theme when switch is clicked
-  themeSwitch.addEventListener('change', function() {
-    if (this.checked) {
-      applyDarkMode();
-    } else {
-      applyLightMode();
-    }
-  });
-  
-  // Listen for changes in system color scheme preference
-  prefersDarkScheme.addEventListener('change', function(e) {
-    if (!localStorage.getItem('theme')) {
-      if (e.matches) {
-        applyDarkMode();
-      } else {
-        applyLightMode();
-      }
-    }
-  });
-  
   // Disable animations on mobile devices for better performance
   if (window.innerWidth < 768) {
     const animatedElements = document.querySelectorAll('[data-aos]');

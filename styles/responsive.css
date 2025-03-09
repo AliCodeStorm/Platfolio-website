@@ -88,8 +88,12 @@
   }
   
   .hero-image {
-    max-width: 300px;
-    margin: 0 auto;
+    max-width: 350px;
+    margin: 0 auto 30px;
+  }
+  
+  .hero-image .image-placeholder {
+    min-height: 300px;
   }
   
   .about-content {
@@ -97,8 +101,12 @@
   }
   
   .about-image {
-    max-width: 500px;
-    margin: 0 auto;
+    max-width: 350px;
+    margin: 0 auto 30px;
+  }
+  
+  .about-image .image-placeholder {
+    min-height: 300px;
   }
   
   .about-text {
@@ -237,6 +245,12 @@
   .scroll-down {
     bottom: 20px;
   }
+  
+  .theme-toggle {
+    position: absolute;
+    top: 15px;
+    right: 70px;
+  }
 }
 
 /* Small Devices (landscape phones, 576px and up) */
@@ -328,8 +342,9 @@
   }
   
   .theme-toggle {
+    position: absolute;
     top: 15px;
-    right: 80px;
+    right: 70px;
   }
   
   .back-to-top {
@@ -367,6 +382,29 @@
   .cursor-dot, .cursor-outline {
     display: none;
   }
+  
+  .hero-image {
+    max-width: 300px;
+  }
+  
+  .hero-image .image-placeholder {
+    min-height: 280px;
+  }
+  
+  .about-image {
+    max-width: 300px;
+  }
+  
+  .about-image .image-placeholder {
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 623px) {
+  .theme-toggle {
+    top: 15px;
+    right: 65px;
+  }
 }
 
 /* Extra Small Devices (portrait phones, less than 576px) */
@@ -380,8 +418,9 @@
   }
   
   .theme-toggle {
-    top: 15px;
-    right: 70px;
+    position: absolute;
+    top: 23px;
+    right: 60px;
   }
   
   .hero-title {
@@ -451,11 +490,11 @@
   
   .form-group input,
   .form-group textarea {
-    padding: 12px;
+    padding: 15px;
   }
   
   .form-group label {
-    font-size: 14px;
+    font-size: 16px;
   }
   
   .contact-form-container {
@@ -512,6 +551,22 @@
   
   .back-to-top i {
     font-size: 16px;
+  }
+  
+  .hero-image {
+    max-width: 250px;
+  }
+  
+  .hero-image .image-placeholder {
+    min-height: 250px;
+  }
+  
+  .about-image {
+    max-width: 250px;
+  }
+  
+  .about-image .image-placeholder {
+    min-height: 250px;
   }
 }
 
