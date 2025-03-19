@@ -86,21 +86,6 @@ document.addEventListener('DOMContentLoaded', function() {
     once: true
   });
   
-  // Testimonials Section
-  ScrollTrigger.create({
-    trigger: '.testimonials',
-    start: 'top 80%',
-    onEnter: () => {
-      gsap.from('.testimonial-item', { 
-        scale: 0.8, 
-        opacity: 0, 
-        duration: 1, 
-        ease: 'power3.out' 
-      });
-    },
-    once: true
-  });
-  
   // Contact Section
   ScrollTrigger.create({
     trigger: '#contact',
