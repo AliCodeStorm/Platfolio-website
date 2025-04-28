@@ -9,21 +9,17 @@
     <meta name="author" content="Your Name">
     <title>Portfolio | Creative Portfolio</title>
 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
 
-    <!-- CSS Files -->
+
     <link rel="stylesheet" href="./styles/main.css">
     <link rel="stylesheet" href="./styles/animations.css">
     <link rel="stylesheet" href="./styles/responsive.css">
 
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- AOS Animation Library -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -102,9 +98,13 @@
                     <span class="typing-effect"></span>
                 </div>
                 <p class="hero-description" data-aos="fade-up" data-aos-delay="300">
-                    Passionate full-stack developer crafting dynamic and efficient web experiences.
-                    Specialized in building scalable applications with modern web technologies.
-                    Constantly learning and exploring new tools to enhance performance, security, and user engagement.
+                    Passionate Frontend Developer with strong skills in building responsive and dynamic web applications
+                    using React.js, Next.js, HTML, CSS, and JavaScript.
+                    Experienced in developing full-stack projects using Node.js, Express, and MongoDB for backend
+                    services.
+                    Currently expanding knowledge in advanced Next.js and backend optimization.
+                    Actively seeking internship opportunities to further enhance skills and contribute to real-world
+                    projects.
                 </p>
                 <div class="hero-cta" data-aos="fade-up" data-aos-delay="400">
                     <a href="#projects" class="btn btn-primary">View My Work</a>
@@ -139,6 +139,75 @@
     </section>
 
     <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Get to know me better</p>
+            </div>
+            <div class="about-content">
+                <div class="about-image" data-aos="fade-right">
+                    <div class="image-placeholder">
+                        <img src="./assets/images/about-image.jpg" alt="About Me"
+                            onerror="this.style.display='none'; this.parentNode.classList.add('no-image');">
+                    </div>
+                    <div class="experience-badge">
+                        <span class="years">Full-Stack</span>
+                        <span class="text">Developer</span>
+                    </div>
+                </div>
+                <div class="about-text" data-aos="fade-left">
+                    <h3>👋 Hi, I'm AliRaza, a Passionate Full-Stack Developer</h3>
+                    <p>I'm a dedicated <strong>Full-Stack Web Developer</strong> specializing in both frontend and
+                        backend development. I focus on creating <strong>scalable, real-time, and interactive web
+                            applications</strong> with the latest technologies.</p>
+
+                    <p>Currently, I am sharpening my skills in <strong>backend development</strong>, particularly in
+                        <strong>Node.js</strong>, and diving deep into advanced topics like <strong>middleware,
+                            authentication, and API development</strong>. I am also exploring <strong>React.js</strong>
+                        to deliver smooth frontend experiences.
+                    </p>
+
+                    <p>Some of my recent projects include:</p>
+                    <ul>
+                        <li>🛍️ <strong>FashionNest</strong> - A full-featured clothing e-commerce store with a robust
+                            <strong>Node.js and MongoDB</strong> backend.
+                        </li>
+                        <li>📝 <strong>Notes App</strong> - A real-time <strong>React + Node.js</strong> application for
+                            managing notes efficiently.</li>
+                        <li>💡 <strong>Fun Web Experiments</strong> - A collection of creative, interactive
+                            mini-websites built with modern web technologies.</li>
+                    </ul>
+
+                    <p>In addition to web development, I am passionate about <strong>content creation</strong>. I
+                        actively share programming insights on <strong>LinkedIn</strong> and am planning to launch a
+                        <strong>YouTube channel</strong> to create coding tutorials and development tips.
+                    </p>
+
+                    <div class="about-info">
+                        <div class="info-item">
+                            <span class="info-title">Focus:</span>
+                            <span class="info-value">Backend Development (Node.js)</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-title">Learning:</span>
+                            <span class="info-value">Advanced Node.js, APIs, Middleware</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-title">Projects:</span>
+                            <span class="info-value">E-commerce, Notes App, Fun Web Experiments</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-title">Interests:</span>
+                            <span class="info-value">Backend Dev, Real-Time Apps, AI, YouTube Content</span>
+                        </div>
+                    </div>
+                    <a href="MyCV/CV.pdf" class="btn btn-primary" download>Download CV</a>
+                    <a href="MyCV/CV.pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
     <section id="about" class="about section">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
@@ -410,8 +479,9 @@
             <div class="project-filters" data-aos="fade-up">
                 <button class="filter-btn active" data-filter="all">All</button>
                 <button class="filter-btn" data-filter="web">Web Development</button>
-                <button class="filter-btn" data-filter="mern">MERN Stack</button>
-                <button class="filter-btn" data-filter="content">UI Creation</button>
+                <button class="filter-btn" data-filter="mern">Mern Stack</button>
+                <button class="filter-btn" data-filter="react">React</button>
+                <button class="filter-btn" data-filter="backend">Backend API</button>
             </div>
             <p class="filter-note" data-aos="fade-up">Click on a category to filter projects</p>
             <div class="projects-grid">
@@ -420,7 +490,7 @@
                     <div class="project-card-inner">
                         <div class="project-card-front">
                             <div class="project-image-placeholder">
-                                <img src="assets/images/projects/project-1.png" alt="FashionNest E-commerce"
+                                <img src="assets/projects/FashionNest.png" alt="FashionNest E-commerce"
                                     onerror="this.style.display='none'; this.parentNode.classList.add('no-image');">
                             </div>
                             <div class="project-overlay">
@@ -452,7 +522,7 @@
                     <div class="project-card-inner">
                         <div class="project-card-front">
                             <div class="project-image-placeholder">
-                                <img src="assets/images/projects/project-2.jpg" alt="Animated Portfolio"
+                                <img src="assets/projects/portfolio.jpg" alt="Animated Portfolio"
                                     onerror="this.style.display='none'; this.parentNode.classList.add('no-image');">
                             </div>
                             <div class="project-overlay">
@@ -480,43 +550,12 @@
                     </div>
                 </div>
 
-                <!-- Project 3: Programming Tutorials -->
-                <div class="project-card" data-category="content" data-aos="fade-up" data-aos-delay="300">
-                    <div class="project-card-inner">
-                        <div class="project-card-front">
-                            <div class="project-image-placeholder">
-                                <img src="assets/images/projects/project-3.jpg" alt="Programming Tutorials"
-                                    onerror="this.style.display='none'; this.parentNode.classList.add('no-image');">
-                            </div>
-                            <div class="project-overlay">
-                                <div class="project-category">Content Creation</div>
-                                <h3 class="project-title">Programming Tutorials</h3>
-                            </div>
-                        </div>
-                        <div class="project-card-back">
-                            <h3>Programming Tutorials</h3>
-                            <p>A series of programming tutorials focused on web development and AI-assisted coding.
-                                Includes video content and code examples for beginners.</p>
-                            <div class="project-tech">
-                                <span>YouTube</span>
-                                <span>Web Dev</span>
-                                <span>AI Tools</span>
-                                <span>Tutorials</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="btn btn-sm">View Channel</a>
-                                <a href="#" class="btn btn-sm btn-outline">Resources</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Project 4: React Learning Project -->
-                <div class="project-card" data-category="mern" data-aos="fade-up" data-aos-delay="400">
+                <div class="project-card" data-category="react" data-aos="fade-up" data-aos-delay="400">
                     <div class="project-card-inner">
                         <div class="project-card-front">
                             <div class="project-image-placeholder">
-                                <img src="assets/images/projects/project-4.jpg" alt="React Learning Project"
+                                <img src="/assets/projects/reactStore.png" alt="React Learning Project"
                                     onerror="this.style.display='none'; this.parentNode.classList.add('no-image');">
                             </div>
                             <div class="project-overlay">
@@ -526,24 +565,220 @@
                         </div>
                         <div class="project-card-back">
                             <h3>React Learning Project</h3>
-                            <p>A project focused on learning React.js fundamentals, including Context API for state
-                                management. Built while exploring the MERN stack.</p>
+                            <p>A modern e-commerce website built with React, Vite and Tailwind CSS, featuring a
+                                responsive design and comprehensive shopping experience.</p>
                             <div class="project-tech">
                                 <span>React</span>
                                 <span>Context API</span>
                                 <span>JavaScript</span>
+                                <span>Tailwind CSS</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://alicodestorm.github.io/react-store/" class="btn btn-sm">Live Demo</a>
+                                <a href="https://github.com/AliCodeStorm/react-store/tree/master"
+                                    class="btn btn-sm btn-outline">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: Vertexstore -->
+                <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="400">
+                    <div class="project-card-inner">
+                        <div class="project-card-front">
+                            <div class="project-image-placeholder">
+                                <img src="/assets/projects/vertexstore.jpg" alt="React Learning Project"
+                                    onerror="this.style.display='none'; this.parentNode.classList.add('no-image');">
+                            </div>
+                            <div class="project-overlay">
+                                <div class="project-category">Store</div>
+                                <h3 class="project-title">Learning Project</h3>
+                            </div>
+                        </div>
+                        <div class="project-card-back">
+                            <h3>Store Project</h3>
+                            <p>A modern e-commerce website built with Html, CSS and javascript, featuring a responsive
+                                design and comprehensive shopping experience.</p>
+                            <div class="project-tech">
+                                <span>Html</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>Animation</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://alicodestorm.github.io/Vertex-Store/" class="btn btn-sm">Live Demo</a>
+                                <a href="https://github.com/AliCodeStorm/Vertex-Store"
+                                    class="btn btn-sm btn-outline">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: Backend Authentication -->
+                <div class="project-card" data-category="backend" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card-inner">
+                        <div class="project-card-front">
+                            <div class="project-image-placeholder">
+                                <img src="assets/projects/backendauthenticatioin.jpg" alt="Backend Authentication"
+                                    onerror="this.style.display='none'; this.parentNode.classList.add('no-image');">
+                            </div>
+                            <div class="project-overlay">
+                                <div class="project-category">Node.js</div>
+                                <h3 class="project-title">Backend Authentication</h3>
+                            </div>
+                        </div>
+                        <div class="project-card-back">
+                            <h3>Backend Authentication</h3>
+                            <p>A backend authentication system built with Node.js, Express.js, and MongoDB. It includes
+                                secure user login, registration, JWT token handling, and basic error handling.</p>
+                            <div class="project-tech">
+                                <span>MongoDB</span>
+                                <span>Express.js</span>
+                                <span>Node.js</span>
+                                <span>JWT</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/AliCodeStorm/Authentication" class="btn btn-sm">View
+                                    Project</a>
+                                <a href="https://github.com/AliCodeStorm/Authentication"
+                                    class="btn btn-sm btn-outline">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 7: Backend Authentication and user settting -->
+                <div class="project-card" data-category="backend" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card-inner">
+                        <div class="project-card-front">
+                            <div class="project-image-placeholder">
+                                <img src="assets/projects/authentication-usersetting.jpg"
+                                    alt="User Authentication & Settings API"
+                                    onerror="this.style.display='none'; this.parentNode.classList.add('no-image');">
+                            </div>
+                            <div class="project-overlay">
+                                <div class="project-category">MERN Stack</div>
+                                <h3 class="project-title">User Authentication & Settings API</h3>
+                            </div>
+                        </div>
+                        <div class="project-card-back">
+                            <h3>User Authentication & Settings API</h3>
+                            <p>A Node.js RESTful API for user authentication, profile management, password updates,
+                                account deletion, and user settings. Implements JWT authentication with refresh tokens
+                                and protected routes using middleware.</p>
+                            <div class="project-tech">
+                                <span>Node.js</span>
+                                <span>Express.js</span>
+                                <span>MongoDB</span>
+                                <span>JWT</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/AliCodeStorm/AuthenticationWithUserSetting"
+                                    class="btn btn-sm">View Project</a>
+                                <a href="https://github.com/AliCodeStorm/AuthenticationWithUserSetting"
+                                    class="btn btn-sm btn-outline">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- project8 css and html playgorund application -->
+                <div class="project-card" data-category="mern" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card-inner">
+                        <div class="project-card-front">
+                            <div class="project-image-placeholder">
+                                <img src="assets/projects/playground.jpg" alt="iNotebook - MERN Stack Note Taking App"
+                                    onerror="this.style.display='none'; this.parentNode.classList.add('no-image');">
+                            </div>
+                            <div class="project-overlay">
+                                <div class="project-category">MERN Stack</div>
+                                <h3 class="project-title">iNotebook - MERN Note App</h3>
+                            </div>
+                        </div>
+                        <div class="project-card-back">
+                            <h3>iNotebook - MERN Note App</h3>
+                            <p>A full-stack note-taking application built with the MERN stack. Users can securely
+                                create, read, update, and delete notes with authentication. Features tagging for
+                                organization, responsive design, and a dark/light theme toggle.</p>
+                            <div class="project-tech">
+                                <span>MongoDB</span>
+                                <span>Express.js</span>
+                                <span>React.js</span>
+                                <span>Node.js</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/AliCodeStorm/iNoteBook" class="btn btn-sm">View Project</a>
+                                <a href="https://github.com/AliCodeStorm/iNoteBook"
+                                    class="btn btn-sm btn-outline">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- project9 inotbook with the mernstacki -->
+                <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card-inner">
+                        <div class="project-card-front">
+                            <div class="project-image-placeholder">
+                                <img src="assets/projects/backendauthenticatioin.jpg" alt="HTML & CSS Playground"
+                                    onerror="this.style.display='none'; this.parentNode.classList.add('no-image');">
+                            </div>
+                            <div class="project-overlay">
+                                <div class="project-category">Frontend</div>
+                                <h3 class="project-title">HTML & CSS Playground</h3>
+                            </div>
+                        </div>
+                        <div class="project-card-back">
+                            <h3>HTML & CSS Playground</h3>
+                            <p>An interactive frontend playground where users can experiment with HTML and CSS in
+                                real-time. Features live preview, code auto-completion, ready-to-use templates, error
+                                handling, keyboard shortcuts, and smooth responsive design.</p>
+                            <div class="project-tech">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/AliCodeStorm/FasionNest" class="btn btn-sm">View Project</a>
+                                <a href="https://github.com/AliCodeStorm/FasionNest"
+                                    class="btn btn-sm btn-outline">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- project 10 interactive login page -->
+                <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card-inner">
+                        <div class="project-card-front">
+                            <div class="project-image-placeholder">
+                                <img src="assets/projects/interactivelogin.jpg" alt="Interactive Login Page"
+                                    onerror="this.style.display='none'; this.parentNode.classList.add('no-image');">
+                            </div>
+                            <div class="project-overlay">
+                                <div class="project-category">Frontend</div>
+                                <h3 class="project-title">Interactive Login Page</h3>
+                            </div>
+                        </div>
+                        <div class="project-card-back">
+                            <h3>Interactive Login Page</h3>
+                            <p>A beautifully designed and fully responsive login page built with HTML and CSS. Includes
+                                interactive input effects, smooth animations, and a mobile-friendly layout to enhance
+                                user experience.</p>
+                            <div class="project-tech">
+                                <span>HTML</span>
                                 <span>CSS</span>
                             </div>
                             <div class="project-links">
-                                <a href="#" class="btn btn-sm">View Project</a>
-                                <a href="#" class="btn btn-sm btn-outline">Source Code</a>
+                                <a href="https://alicodestorm.github.io/Login-page/" class="btn btn-sm">Demo</a>
+                                <a href="https://github.com/AliCodeStorm/Login-page"
+                                    class="btn btn-sm btn-outline">Source Code</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="projects-cta" data-aos="fade-up">
-                <a href="#" class="btn btn-primary">View All Projects</a>
+                <button class="filter-btn active" data-filter="all">View All Projects</button>
             </div>
         </div>
     </section>
@@ -573,7 +808,9 @@
                         <div class="contact-details">
                             <h4>Linked In</h4>
                             <p>
-                            <div class="badge-base LI-profile-badge" data-locale="en_US"          data-size="large" data-theme="light" data-type="HORIZONTAL"   data-vanity="ali-raza-7b735834b" data-version="v1">
+                            <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large"
+                                data-theme="light" data-type="HORIZONTAL" data-vanity="ali-raza-7b735834b"
+                                data-version="v1">
                                 <a class="badge-base__link LI-simple-link"
                                     href="https://pk.linkedin.com/in/ali-raza-7b735834b?trk=profile-badge">Ali Raza
                                 </a>
@@ -690,19 +927,16 @@
         <div class="footer-shape"></div>
     </footer>
 
-    <!-- Back to Top Button -->
     <a href="#home" class="back-to-top">
         <i class="fas fa-arrow-up"></i>
     </a>
 
-    <!-- JavaScript Libraries -->
     <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
-    <!-- Custom JavaScript -->
     <script src="./js/main.js"></script>
     <script src="./js/animations.js"></script>
     <script src="./js/cursor.js"></script>

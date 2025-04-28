@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   'use strict';
   
-  // Contact Form Validation
+  
   const contactForm = document.getElementById('contact-form');
   
   if (contactForm) {
@@ -17,14 +17,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const subjectError = subjectInput.nextElementSibling.nextElementSibling;
     const messageError = messageInput.nextElementSibling.nextElementSibling;
     
-    // Form submission handler
+    
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
       
-      // Reset error messages
+      
       resetErrors();
       
-      // Validate inputs
+      
       let isValid = true;
       
       if (!validateName(nameInput.value)) {
@@ -47,32 +47,32 @@ document.addEventListener('DOMContentLoaded', function() {
         isValid = false;
       }
       
-      // If form is valid, submit it
+      
       if (isValid) {
-        // Show success message
+        
         const submitBtn = contactForm.querySelector('.submit-btn');
         const originalText = submitBtn.innerHTML;
         
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
         submitBtn.disabled = true;
         
-        // Simulate form submission (replace with actual form submission)
+        
         setTimeout(() => {
-          // Reset form
+          
           contactForm.reset();
           
-          // Show success message
+          
           const successMessage = document.createElement('div');
           successMessage.className = 'success-message';
           successMessage.innerHTML = '<i class="fas fa-check-circle"></i> Your message has been sent successfully!';
           
           contactForm.appendChild(successMessage);
           
-          // Reset button
+          
           submitBtn.innerHTML = originalText;
           submitBtn.disabled = false;
           
-          // Remove success message after 5 seconds
+          
           setTimeout(() => {
             successMessage.style.opacity = '0';
             setTimeout(() => {
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
     
-    // Real-time validation on input
+    
     nameInput.addEventListener('input', function() {
       if (this.value.trim() !== '') {
         if (!validateName(this.value)) {
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
     
-    // Validation functions
+    
     function validateName(name) {
       return name.trim().length >= 2;
     }
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
       return message.trim().length >= 10;
     }
     
-    // Helper functions
+    
     function showError(input, errorElement, message) {
       input.classList.add('error');
       errorElement.textContent = message;
@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function resetErrors() {
-      // Reset all error messages
+      
       const errorElements = contactForm.querySelectorAll('.form-error');
       const inputElements = contactForm.querySelectorAll('input, textarea');
       
@@ -178,33 +178,33 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
     
-    // Form input animations
+    
     const formGroups = document.querySelectorAll('.form-group');
     
     formGroups.forEach(group => {
       const input = group.querySelector('input, textarea');
       const label = group.querySelector('label');
       
-      // Focus animation
+      
       input.addEventListener('focus', () => {
         label.classList.add('active');
       });
       
-      // Blur animation
+      
       input.addEventListener('blur', () => {
         if (input.value.trim() === '') {
           label.classList.remove('active');
         }
       });
       
-      // Check if input has value on page load
+      
       if (input.value.trim() !== '') {
         label.classList.add('active');
       }
     });
   }
   
-  // Newsletter Form Validation
+  
   const newsletterForm = document.querySelector('.newsletter-form');
   
   if (newsletterForm) {
@@ -216,13 +216,13 @@ document.addEventListener('DOMContentLoaded', function() {
       if (!validateEmail(emailInput.value)) {
         emailInput.classList.add('error');
         
-        // Shake animation for error
+        
         emailInput.classList.add('shake');
         setTimeout(() => {
           emailInput.classList.remove('shake');
         }, 500);
       } else {
-        // Success animation
+        
         const button = newsletterForm.querySelector('button');
         const originalHTML = button.innerHTML;
         
@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded', function() {
         button.classList.add('success');
         emailInput.classList.add('success');
         
-        // Reset form after delay
+        
         setTimeout(() => {
           newsletterForm.reset();
           button.innerHTML = originalHTML;
@@ -240,12 +240,12 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
     
-    // Remove error class on input
+    
     emailInput.addEventListener('input', function() {
       this.classList.remove('error');
     });
     
-    // Email validation function
+    
     function validateEmail(email) {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       return emailRegex.test(email);

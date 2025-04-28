@@ -3,9 +3,9 @@
 document.addEventListener('DOMContentLoaded', function() {
   'use strict';
 
-  // GSAP Animations
   
-  // Hero Section Animations
+  
+  
   const heroTimeline = gsap.timeline({ defaults: { ease: 'power3.out' } });
   
   heroTimeline
@@ -17,10 +17,10 @@ document.addEventListener('DOMContentLoaded', function() {
     .from('.social-links', { y: 50, opacity: 0, duration: 1 }, '-=0.7')
     .from('.scroll-down', { y: -20, opacity: 0, duration: 1 }, '-=0.5');
   
-  // Typing Effect
+  
   if (document.querySelector('.typing-effect')) {
     const options = {
-      strings: ['Web Developer', 'MERN Stack Learner', 'Frontend Developer', 'Content Creator'],
+      strings: ['Web Developer', 'MERN Stack', 'Frontend Developer', 'Backend Developer'],
       typeSpeed: 100,
       backSpeed: 50,
       backDelay: 2000,
@@ -30,9 +30,9 @@ document.addEventListener('DOMContentLoaded', function() {
     new Typed('.typing-effect', options);
   }
   
-  // Scroll Animations
   
-  // About Section
+  
+  
   ScrollTrigger.create({
     trigger: '#about',
     start: 'top 80%',
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
     once: true
   });
   
-  // Skills Section
+  
   ScrollTrigger.create({
     trigger: '#skills',
     start: 'top 80%',
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
     once: true
   });
   
-  // Projects Section
+  
   ScrollTrigger.create({
     trigger: '#projects',
     start: 'top 80%',
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
     once: true
   });
   
-  // Contact Section
+  
   ScrollTrigger.create({
     trigger: '#contact',
     start: 'top 80%',
@@ -108,13 +108,13 @@ document.addEventListener('DOMContentLoaded', function() {
     once: true
   });
   
-  // Background Parallax Effect
+  
   const animatedBackground = document.querySelector('.animated-background');
   const bgShapes = document.querySelectorAll('.bg-shape');
   const floatingElements = document.querySelectorAll('.floating-element');
   
   if (animatedBackground) {
-    // Mouse move parallax effect
+    
     document.addEventListener('mousemove', function(e) {
       const mouseX = e.clientX / window.innerWidth;
       const mouseY = e.clientY / window.innerHeight;
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
     
-    // Scroll parallax effect
+    
     window.addEventListener('scroll', function() {
       const scrollY = window.scrollY;
       
@@ -146,10 +146,10 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
     
-    // Random size and opacity for floating elements
+    
     floatingElements.forEach((element) => {
-      const size = Math.random() * 10 + 5; // Random size between 5px and 15px
-      const opacity = Math.random() * 0.3 + 0.1; // Random opacity between 0.1 and 0.4
+      const size = Math.random() * 10 + 5; 
+      const opacity = Math.random() * 0.3 + 0.1; 
       
       element.style.width = `${size}px`;
       element.style.height = `${size}px`;
@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // Animate on hover for project cards
+  
   const projectCards = document.querySelectorAll('.project-card');
   
   projectCards.forEach(card => {
@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // Animate section titles when they come into view
+  
   const sectionTitles = document.querySelectorAll('.section-title');
   
   sectionTitles.forEach(title => {
@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // Animate progress bars in skills section
+  
   const progressBars = document.querySelectorAll('.progress-bar');
   
   ScrollTrigger.create({
